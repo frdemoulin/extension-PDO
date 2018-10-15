@@ -85,7 +85,7 @@ requête préparée avec marqueurs ?
 *********************************
 
 // on prépare la requête en utilisant le marqueur ?
-// prepare() : métode de la classe PDO, prépare une requête à l'exécution et retourne un objet
+// prepare() : méthode de la classe PDO, prépare une requête à l'exécution et retourne un objet
 // 
 $reponse = $bdd->prepare('SELECT nom, prix FROM jeux_video WHERE possesseur = ? AND prix <= ?');
 // on exécute la requête avec un array en paramètre
@@ -99,7 +99,7 @@ requête préparée avec marqueurs nominatifs :
 ********************************************
 */
 
-// on prépare la requête en utilisant des marqueurs nominatifs(ils commencent par le symbole :)
+// on prépare la requête en utilisant des marqueurs nominatifs (ils commencent par le symbole :)
 $reponse = $bdd->prepare('SELECT nom, prix FROM jeux_video WHERE possesseur = :possesseur AND prix <= :prixmax');
 // on exécute la requête avec un array associatif en paramètre
 $reponse->execute(array('possesseur' => $_GET['possesseur'], 'prixmax' => $_GET['prix_max']));
